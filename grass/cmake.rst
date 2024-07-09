@@ -5,7 +5,7 @@ Installing Dependencies
 -----------------------
 
 Install Miniconda:
-Navigate to https://docs.anaconda.com/miniconda/miniconda-install/ and select 
+Navigate to https://docs.anaconda.com/miniconda/miniconda-install/ and select the operating system as Linux to get detailed steps of installing Miniconda. 
 
 
 Add Conda forge channel to default channels
@@ -21,7 +21,7 @@ Install CMake in Ubuntu
 3. sudo apt install cMake
 
 Install dependencies for grass. g++, flex, bison,PROJ_LIBRARY, GDAL, X11, OpenGL, Cairo, Gettext, FFTW
-Similar conda packages are gcc, flex, bison, proj4, gdal, xorg-libx11, 
+Similar conda packages are gcc, flex, bison, proj4, gdal, xorg-libx11, pyopengl ,cairo, gettext, fftw, pdal
     sudo apt-get install g++ &&
     sudo apt-get install flex &&
     sudo apt-get install bison &&

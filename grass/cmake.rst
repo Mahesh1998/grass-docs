@@ -8,8 +8,8 @@ undefined reference to symbol 'json_object_set_string@@JSONC_0.14'
 
 Solution:
 ---------
-https://stackoverflow.com/a/63539899
-target_link_libraries(r.info PRIVATE json-c)
+| https://stackoverflow.com/a/63539899
+| target_link_libraries(r.info PRIVATE json-c)
 
 
 

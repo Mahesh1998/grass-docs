@@ -1,3 +1,14 @@
+Building the grass using CMake in Slackware using System Libraries
+========================
+
+Error: undefined reference to symbol 'json_object_set_string@@JSONC_0.14'
+/usr/bin/ld: /usr/lib64/libjson-c.so.5: error adding symbols: DSO missing from command line
+
+Solution: https://stackoverflow.com/a/63539899
+
+
+
+
 Building the grass using CMake in Ubuntu
 ========================
 

@@ -1,6 +1,8 @@
 Building the grass using CMake in Slackware using System Libraries
 ==================================================================
 
+CMake, dependency libraries are pre-installed in slackware. So, proceeding to build the project.
+
 1. Create a build directory if doesn't exists in project directory and navigate to that build directory.
 
   | `mkdir build`

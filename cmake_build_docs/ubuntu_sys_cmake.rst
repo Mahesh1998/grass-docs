@@ -18,16 +18,16 @@ Install dependencies for grass. g++, flex, bison,PROJ_LIBRARY, GDAL, X11, OpenGL
 
 .. code-block:: bash
 
-   sudo apt-get install g++ &&
-   sudo apt-get install flex &&
-   sudo apt-get install bison &&
-   sudo apt-get install libproj-dev &&
-   sudo apt-get install libgdal-dev &&
-   sudo apt-get install libx11-dev &&
-   sudo apt-get install libgl1-mesa-dev &&
-   sudo apt-get install libcairo2-dev &&
-   sudo apt-get install gettext &&
-   sudo apt-get install libfftw3-dev &&
+   sudo apt-get install g++
+   sudo apt-get install flex
+   sudo apt-get install bison
+   sudo apt-get install libproj-dev
+   sudo apt-get install libgdal-dev
+   sudo apt-get install libx11-dev
+   sudo apt-get install libgl1-mesa-dev
+   sudo apt-get install libcairo2-dev
+   sudo apt-get install gettext
+   sudo apt-get install libfftw3-dev
 
 Install PDAL dependency manually
 
@@ -154,8 +154,24 @@ Updated Code to fix the issue.
    if(TARGET grass_ogsf)
    endif(TARGET grass_ogsf)
 
-
 Error5:
+-------
+
+.. code-block::
+
+   make[2]: *** No rule to make target 'm.nviz.image', needed by 'CMakeFiles/ALL_MODULES'.  Stop.
+   make[1]: *** [CMakeFiles/Makefile2:2602: CMakeFiles/ALL_MODULES.dir/all] Error 2
+   make: *** [Makefile:146: all] Error 2
+
+Solution5:
+----------
+Remove all the build files, including cache and rerun.
+
+.. code-block:: bash
+   
+   rm -rf *
+
+Error6:
 -------
 
 .. code-block::
@@ -168,7 +184,7 @@ Error5:
    make[1]: *** [CMakeFiles/Makefile2:22366: gui/wxpython/CMakeFiles/build_menustrings.dir/all] Error 2
    make: *** [Makefile:146: all] Error 2
 
-Solution5:
+Solution6:
 ----------
 Install wxpython system library
 

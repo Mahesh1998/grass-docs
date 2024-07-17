@@ -1,6 +1,10 @@
 Building the grass using CMake in Ubuntu using system libraries
 ===============================================================
 
+OS Information
+--------------
+Ubuntu Release 24.04
+
 Install CMake in Ubuntu
 -----------------------
 
@@ -120,22 +124,52 @@ Solution3:
 ---------
 This issue is fixed in the slackware sys library setup. So, pulled latest changes to the local branch.
 
-
 Error4:
 -------
 
 .. code-block::
 
-Traceback (most recent call last):
-  File "/home/mahesh/Documents/grass/gui/wxpython/core/menutree.py", line 41, in <module>
-    import wx
-ModuleNotFoundError: No module named 'wx'
-make[2]: *** [gui/wxpython/CMakeFiles/build_menustrings.dir/build.make:70: gui/wxpython/CMakeFiles/build_menustrings] Error 1
-make[1]: *** [CMakeFiles/Makefile2:22366: gui/wxpython/CMakeFiles/build_menustrings.dir/all] Error 2
-make: *** [Makefile:146: all] Error 2
+   CMake Error at cmake/modules/build_module.cmake:160 (message):
+    grass_ogsf not a target
+   Call Stack (most recent call first):
+    cmake/modules/build_program.cmake:10 (build_module)
+    cmake/modules/build_program_in_subdir.cmake:17 (build_program)
+    misc/CMakeLists.txt:9 (build_program_in_subdir)
 
 Solution4:
----------
+----------
+Replaced WITH_OPENGL to grass_ogsf
+
+Old Code that caused the error.
+
+.. code-block::
+
+   if(WITH_OPENGL)
+   endif(WITH_OPENGL)
+
+Updated Code to fix the issue.
+
+.. code-block::
+
+   if(TARGET grass_ogsf)
+   endif(TARGET grass_ogsf)
+
+
+Error5:
+-------
+
+.. code-block::
+
+   Traceback (most recent call last):
+     File "/home/mahesh/Documents/grass/gui/wxpython/core/menutree.py", line 41, in <module>
+       import wx
+   ModuleNotFoundError: No module named 'wx'
+   make[2]: *** [gui/wxpython/CMakeFiles/build_menustrings.dir/build.make:70: gui/wxpython/CMakeFiles/build_menustrings] Error 1
+   make[1]: *** [CMakeFiles/Makefile2:22366: gui/wxpython/CMakeFiles/build_menustrings.dir/all] Error 2
+   make: *** [Makefile:146: all] Error 2
+
+Solution5:
+----------
 Install wxpython system library
 
 .. code-block:: bash

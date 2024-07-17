@@ -1,5 +1,5 @@
 Building the grass using CMake in Ubuntu using system libraries
-========================
+===============================================================
 
 Install CMake in Ubuntu
 -----------------------
@@ -47,7 +47,7 @@ create build directory and build using cmake
    cmake --build .
 
 Error1:
----------
+-------
 
 .. code-block::
 
@@ -83,7 +83,7 @@ Solution1:
 Include GDAL in display/CMakelists.txt(d.grid), raster/CMakelists.txt(r.path) to fix the error. Similar errors occurred in multiple files and we included GDAL in required CMakelists based on the error received.
 
 Error2:
----------
+-------
 
 .. code-block::
 
@@ -105,7 +105,7 @@ Here OpenGL is a system library is installed without GLU. So, we added condition
 
 
 Error3:
----------
+-------
 
 .. code-block::
 
@@ -118,10 +118,29 @@ Error3:
 
 Solution3:
 ---------
-We fixed it in the slackware. So, I merged those changes to my local branch
+This issue is fixed in the slackware sys library setup. So, pulled latest changes to the local branch.
+
 
 Error4:
 -------
+
+.. code-block::
+
+Traceback (most recent call last):
+  File "/home/mahesh/Documents/grass/gui/wxpython/core/menutree.py", line 41, in <module>
+    import wx
+ModuleNotFoundError: No module named 'wx'
+make[2]: *** [gui/wxpython/CMakeFiles/build_menustrings.dir/build.make:70: gui/wxpython/CMakeFiles/build_menustrings] Error 1
+make[1]: *** [CMakeFiles/Makefile2:22366: gui/wxpython/CMakeFiles/build_menustrings.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+Solution4:
+---------
+Install wxpython system library
+
+.. code-block:: bash
+
+   sudo apt install python3-wxgtk4.0
 
 
 

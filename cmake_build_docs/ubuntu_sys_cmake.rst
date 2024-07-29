@@ -29,6 +29,31 @@ Install dependencies for grass. g++, flex, bison,PROJ_LIBRARY, GDAL, X11, OpenGL
    sudo apt-get install gettext
    sudo apt-get install libfftw3-dev
 
+
+create build directory and build using cmake
+
+.. code-block:: bash
+
+   mkdir build_dir
+   cd build_dir
+   cmake ..
+   cmake --build .
+
+Error1:
+-------
+Unable to install pdal using apt
+
+.. code-block::
+
+    sudo apt-get install libpdal-dev
+   [sudo] password for mahesh: 
+   Reading package lists... Done
+   Building dependency tree... Done
+   Reading state information... Done
+   E: Unable to locate package libpdal-dev
+
+Solution1:
+----------
 Install PDAL dependency manually
 
 .. code-block:: bash
@@ -41,16 +66,7 @@ Install PDAL dependency manually
    make
    sudo make install
 
-create build directory and build using cmake
-
-.. code-block:: bash
-
-   mkdir build_dir
-   cd build_dir
-   cmake ..
-   cmake --build .
-
-Error1:
+Error2:
 -------
 
 .. code-block::
@@ -82,11 +98,11 @@ Error1:
    make[1]: *** [CMakeFiles/Makefile2:10958: raster/CMakeFiles/r.path.dir/all] Error 2
    make: *** [Makefile:146: all] Error 2
 
-Solution1:
+Solution2:
 ---------
 Include GDAL in display/CMakelists.txt(d.grid), raster/CMakelists.txt(r.path) to fix the error. Similar errors occurred in multiple files and we included GDAL in required CMakelists based on the error received.
 
-Error2:
+Error3:
 -------
 
 .. code-block::
@@ -99,7 +115,7 @@ Error2:
    make[1]: *** [CMakeFiles/Makefile2:4704: lib/CMakeFiles/grass_ogsf.dir/all] Error 2
    make: *** [Makefile:146: all] Error 2
 
-Solution2:
+Solution3:
 ---------
 Here OpenGL is a system library is installed without GLU. So, we added condition to run OpenGL only if it founds GLU, GLX.
 
@@ -108,7 +124,7 @@ Here OpenGL is a system library is installed without GLU. So, we added condition
    if(WITH_OPENGL AND OPENGL_GLU_FOUND AND OpenGL_GLX_FOUND)
 
 
-Error3:
+Error4:
 -------
 
 .. code-block::
@@ -120,11 +136,11 @@ Error3:
    make[1]: *** [CMakeFiles/Makefile2:10330: raster/CMakeFiles/r.info.dir/all] Error 2
    make: *** [Makefile:146: all] Error 2
 
-Solution3:
+Solution4:
 ---------
 This issue is fixed in the slackware sys library setup. So, pulled latest changes to the local branch.
 
-Error4:
+Error5:
 -------
 
 .. code-block::
@@ -136,7 +152,7 @@ Error4:
     cmake/modules/build_program_in_subdir.cmake:17 (build_program)
     misc/CMakeLists.txt:9 (build_program_in_subdir)
 
-Solution4:
+Solution5:
 ----------
 Replaced WITH_OPENGL to grass_ogsf
 
@@ -154,7 +170,7 @@ Updated Code to fix the issue.
    if(TARGET grass_ogsf)
    endif(TARGET grass_ogsf)
 
-Error5:
+Error6:
 -------
 
 .. code-block::
@@ -163,7 +179,7 @@ Error5:
    make[1]: *** [CMakeFiles/Makefile2:2602: CMakeFiles/ALL_MODULES.dir/all] Error 2
    make: *** [Makefile:146: all] Error 2
 
-Solution5:
+Solution6:
 ----------
 Remove all the build files, including cache and rerun.
 
@@ -171,7 +187,7 @@ Remove all the build files, including cache and rerun.
    
    rm -rf *
 
-Error6:
+Error7:
 -------
 
 .. code-block::
@@ -184,14 +200,12 @@ Error6:
    make[1]: *** [CMakeFiles/Makefile2:22366: gui/wxpython/CMakeFiles/build_menustrings.dir/all] Error 2
    make: *** [Makefile:146: all] Error 2
 
-Solution6:
+Solution7:
 ----------
 Install wxpython system library
 
 .. code-block:: bash
 
    sudo apt install python3-wxgtk4.0
-
-
 
 

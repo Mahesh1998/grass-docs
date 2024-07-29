@@ -138,19 +138,22 @@ Wherever we get below error, I've added grass_parson to the respective CMakelist
 
 Solution3:
 ----------
+
 Referenced grass_parson in CMakeLists in raster(r.univar, r3.univar) and vector(v.univar)
 
 Error4:
 -------
 
-[100%] Built target gui_images
-Traceback (most recent call last):
-  File "/home/mahesh/Documents/grass/gui/wxpython/core/menutree.py", line 41, in <module>
-    import wx
-ModuleNotFoundError: No module named 'wx'
-make[2]: *** [gui/wxpython/CMakeFiles/build_menustrings.dir/build.make:70: gui/wxpython/CMakeFiles/build_menustrings] Error 1
-make[1]: *** [CMakeFiles/Makefile2:22387: gui/wxpython/CMakeFiles/build_menustrings.dir/all] Error 2
-make: *** [Makefile:134: all] Error 2
+.. code-block::
+
+   [100%] Built target gui_images
+   Traceback (most recent call last):
+     File "/home/mahesh/Documents/grass/gui/wxpython/core/menutree.py", line 41, in <module>
+       import wx
+   ModuleNotFoundError: No module named 'wx'
+   make[2]: *** [gui/wxpython/CMakeFiles/build_menustrings.dir/build.make:70: gui/wxpython/CMakeFiles/build_menustrings] Error 1
+   make[1]: *** [CMakeFiles/Makefile2:22387: gui/wxpython/CMakeFiles/build_menustrings.dir/all] Error 2
+   make: *** [Makefile:134: all] Error 2
 
 Solution4:
 ----------

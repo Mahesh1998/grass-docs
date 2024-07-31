@@ -35,8 +35,8 @@ Installing Dependencies:
    conda install blas
    conda install libpdal
 
-Error Sqlite
---------------
+Error 1: Sqlite
+---------------
 
 .. code-block::
 
@@ -63,7 +63,7 @@ Error Sqlite
    make: *** [Makefile:134: all] Error 2
 
 
-Solution
+Solution 1
 ----------
 
 PDAL downgrades sqlite. So, we need to upgrade sqlite.
@@ -84,8 +84,8 @@ At this time, the latest version of sqlite is 3.46.0
    conda install sqlite=3.46.0
 
 
-Error Sqlite
---------------
+Error 2: Sqlite
+---------------
 
 .. code-block::
 
@@ -100,7 +100,7 @@ Error Sqlite
    make: *** [Makefile:134: all] Error 2
 
 
-Solution
+Solution 2
 ----------
 
 Upgrading of sqlite corrupts libsqlite. So, we are force-reinstalling.
@@ -110,8 +110,8 @@ Upgrading of sqlite corrupts libsqlite. So, we are force-reinstalling.
    conda install libsqlite --force-reinstall
 
 
-Error Sqlite
---------------
+Error 3: Sqlite
+---------------
 
 .. code-block::
 
@@ -137,7 +137,7 @@ Error Sqlite
    make[1]: *** [CMakeFiles/Makefile2:5917: db/drivers/CMakeFiles/sqlite.dir/all] Error 2
    make: *** [Makefile:134: all] Error 2
 
-Solution 
+Solution 3
 ----------
 
 Added environment variables to pick conda libraries instead of system libraries.
@@ -147,7 +147,7 @@ Added environment variables to pick conda libraries instead of system libraries.
    export LD_LIBRARY_PATH=/home/user1/miniconda3/envs/env_name/lib
 
 
-Error Parson
+Error 4: Parson
 ---------------
 
 Wherever we get below error, I've added grass_parson to the respective CMakelists. 
@@ -192,13 +192,13 @@ Wherever we get below error, I've added grass_parson to the respective CMakelist
    make[2]: *** [vector/CMakeFiles/v.univar.dir/build.make:104: output/lib/grass85/bin/v.univar] Error 1
    make[1]: *** [CMakeFiles/Makefile2:20701: vector/CMakeFiles/v.univar.dir/all] Error 2
 
-Solution
+Solution 4
 ----------
 
 Referenced grass_parson in CMakeLists in raster(r.univar, r3.univar) and vector(v.univar)
 
-Error WXPython
--------------
+Error 5: WXPython
+-----------------
 
 .. code-block::
 
@@ -211,10 +211,9 @@ Error WXPython
    make[1]: *** [CMakeFiles/Makefile2:22387: gui/wxpython/CMakeFiles/build_menustrings.dir/all] Error 2
    make: *** [Makefile:134: all] Error 2
 
-Solution
+Solution 5
 ----------
 
 .. code-block:: bash
 
    conda install wxpython
-

@@ -15,8 +15,20 @@ Add Conda forge channel to default channels
 
    conda config --append channels conda-forge
 
+
+
 Installing Dependencies:
 ---------------------------------------
+
+.. code-block::
+   
+   grass/build$ cmake ..
+   Command 'cmake' not found, but can be installed with:
+   sudo snap install cmake  # version 3.30.1, or
+   sudo apt  install cmake  # version 3.27.8-1build1
+   See 'snap info cmake' for additional versions.
+
+Installing dependencies based on the error messages received while compiling grass.
 
 
 .. code-block:: bash

@@ -5,30 +5,31 @@ OS Information
 --------------
 Ubuntu Release 24.04
 
-Install CMake in Ubuntu
------------------------
+Verify if cmake exists
+----------------------
+
+.. code-block:: bash
+
+   cmake --version
+
+Output
+
+.. code-block::
+
+   Command 'cmake' not found, but can be installed with:
+   sudo snap install cmake  # version 3.30.1, or
+   sudo apt  install cmake  # version 3.27.8-1build1
+   See 'snap info cmake' for additional versions.
+
+
+Install CMake
+-------------
 
 .. code-block:: bash
 
    sudo apt update
    sudo apt upgrade
-   sudo apt install cMake
-
-Install dependencies for grass. g++, flex, bison,PROJ_LIBRARY, GDAL, X11, OpenGL, Cairo, Gettext, FFTW
-
-.. code-block:: bash
-
-   sudo apt-get install g++
-   sudo apt-get install flex
-   sudo apt-get install bison
-   sudo apt-get install libproj-dev
-   sudo apt-get install libgdal-dev
-   sudo apt-get install libx11-dev
-   sudo apt-get install libgl1-mesa-dev
-   sudo apt-get install libcairo2-dev
-   sudo apt-get install gettext
-   sudo apt-get install libfftw3-dev
-
+   sudo apt install cmake
 
 create build directory and build using cmake
 
@@ -38,6 +39,24 @@ create build directory and build using cmake
    cd build_dir
    cmake ..
    cmake --build .
+
+Now it will prompt for unavailable dependencies and install all the dependencies.
+
+Install dependencies for grass.
+-------------------------------
+
+.. code-block:: bash
+
+   sudo apt-get install g++ \
+                        flex \
+                        bison \
+                        libproj-dev \
+                        libgdal-dev \
+                        libx11-dev \
+                        libgl1-mesa-dev \
+                        libcairo2-dev \
+                        gettext \
+                        libfftw3-dev
 
 Error1:
 -------

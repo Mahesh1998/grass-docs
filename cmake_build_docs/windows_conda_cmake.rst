@@ -13,6 +13,10 @@ Installing Dependencies
 Install Miniconda:
 Navigate to https://docs.anaconda.com/miniconda/miniconda-install/ and select the operating system as Windows to get detailed steps of installing Miniconda. 
 
+Now open Developer command prompt for visual studio and activate conda using below command.
+
+.. code-block:: bash
+   conda activate
 
 Add Conda forge channel to default channels
 

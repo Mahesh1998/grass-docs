@@ -2,7 +2,7 @@ Building the grass using CMake in Ubuntu using Conda packages
 =============================================================
 
 
-Installing Dependencies
+Installing Miniconda
 -----------------------
 
 Install Miniconda:
@@ -15,6 +15,9 @@ Add Conda forge channel to default channels
 
    conda config --append channels conda-forge
 
+
+Installing Dependencies
+-----------------------
 
 .. code-block::
    

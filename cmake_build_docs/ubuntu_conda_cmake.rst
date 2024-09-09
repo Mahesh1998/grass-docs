@@ -16,10 +16,6 @@ Add Conda forge channel to default channels
    conda config --append channels conda-forge
 
 
-
-Installing Dependencies:
----------------------------------------
-
 .. code-block::
    
    grass/build$ cmake ..

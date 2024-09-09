@@ -7,7 +7,7 @@ Install visual Studio with c++ compiler
 Follow this documentation to install https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170
 
 
-Installing Dependencies
+Installing Miniconda
 -----------------------
 
 Install Miniconda:
@@ -24,6 +24,9 @@ Add Conda forge channel to default channels
 
    conda config --append channels conda-forge
 
+
+Installing Dependencies
+-----------------------
    
 Installing dependencies based on the error messages received while compiling grass.
 

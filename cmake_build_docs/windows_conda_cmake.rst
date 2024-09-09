@@ -24,9 +24,6 @@ Add Conda forge channel to default channels
 
    conda config --append channels conda-forge
 
-
-Installing Dependencies:
----------------------------------------
    
 Installing dependencies based on the error messages received while compiling grass.
 

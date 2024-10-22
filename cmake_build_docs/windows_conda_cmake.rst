@@ -18,11 +18,12 @@ Now open Developer command prompt for visual studio and activate conda using bel
 .. code-block:: bash
    conda activate
 
-Add Conda forge channel to default channels
+Add Conda forge channel to default channels and set strict priority
 
 .. code-block:: bash
 
-   conda config --append channels conda-forge
+   conda config --add channels conda-forge
+   conda config --set channel_priority strict
 
 
 Installing Dependencies
